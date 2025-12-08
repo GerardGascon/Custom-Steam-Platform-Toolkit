@@ -26,3 +26,10 @@ just use the official version, as it probably works better than this.
 For development and usage documentation I'll be using
 the [Documentation~ folder](Packages/com.geri.platformtoolkit.steam/Documentation~), so please refer to that when
 extending the functionality and/or using this package in your project.
+
+## Installation
+
+> [!NOTE]
+> The is still under development, it may not work at all at the moment.
+
+If you want to add it to your project, you may refer to this [file](Packages/com.geri.platformtoolkit.steam/Documentation~/installation.md).
