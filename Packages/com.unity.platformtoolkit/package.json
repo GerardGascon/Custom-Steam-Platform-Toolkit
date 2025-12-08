@@ -1,0 +1,25 @@
+{
+  "name": "com.unity.platformtoolkit",
+  "version": "1.0.0",
+  "unity": "6000.3",
+  "unityRelease": "0b7",
+  "displayName": "Platform Toolkit",
+  "description": "Unity Platform Toolkit package contains API interfaces that are platform agnostic and allow game developers to interact with the system. The platform implementation packages provide platform-specific implementations for the API interfaces. Implementations are available for all supported platforms and also for the Unity Editor as a platform.",
+  "keywords": [
+    "platform",
+    "services"
+  ],
+  "dependencies": {
+    "com.unity.modules.jsonserialize": "1.0.0"
+  },
+  "repository": {
+    "revision": "6a93bbe6b38b2a49dac8f3278800c5cd5782bdd1",
+    "type": "git",
+    "url": "https://github.cds.internal.unity3d.com/unity/SystemCapabilities.git"
+  },
+  "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.platformtoolkit@1.0/manual/index.html",
+  "_upm": {
+    "changelog": "- Initial release"
+  },
+  "_fingerprint": "254e2b1f1d2133aa245d5b9df413e8c47cedb039"
+}

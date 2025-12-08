@@ -1,0 +1,24 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.unity.platformtoolkit/Editor/Achievement/UI/style.uss?fileID=7433441132597879392&amp;guid=73b56bde08676d743a5171a0d5024e43&amp;type=3#style" />
+    <engine:VisualElement class="column__cell">
+        <engine:VisualElement name="icon-container" class="column__cell__warning-container">
+            <engine:VisualElement name="warning-icon" class="column__cell__warning-image">
+                <Bindings>
+                    <engine:DataBinding property="style.display" binding-mode="ToTarget" source-to-ui-converters="StringIdCellViewModel Converter" />
+                    <engine:DataBinding property="tooltip" binding-mode="ToTarget" source-to-ui-converters="StringIdCellViewModel Converter" />
+                </Bindings>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement class="column__cell__attribute-list">
+            <engine:TextField label="Id" is-delayed="true">
+                <Bindings>
+                    <engine:DataBinding property="value" data-source-path="Id" binding-mode="TwoWay" data-source-type="Unity.PlatformToolkit.Editor.StringIdCellViewModel, Unity.PlatformToolkit.Editor" />
+                    <engine:DataBinding property="enabledSelf" data-source-path="Achievement.ImplementationData.Ignore" binding-mode="ToTarget" source-to-ui-converters="Backwards bool converter" />
+                </Bindings>
+            </engine:TextField>
+        </engine:VisualElement>
+        <engine:VisualElement name="popupfield-container" class="column__cell__button-container column__cell__kebab-button-container">
+            <Unity.PlatformToolkit.Editor.AchievementIgnoreDropdown name="popup-button" text="⋮" class="column__cell__button column__cell__kebab-button" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

@@ -1,0 +1,85 @@
+.account-field {
+    padding: 5px 10px 5px 15px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--unity-colors-default-border);
+}
+
+.achievement-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 6px;
+}
+
+.achievement-field__id-label {
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.achievement-field__locked-unlocked-group {
+    margin: 0 10px 0 10px;
+}
+
+.achievement-field__progress-tracking-container {
+    width: 80px;
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.achievement-field__progress-tracking-input {
+    width: 50px;
+    margin-right: 5px;
+}
+
+.save-list .unity-help-box {
+    margin-bottom: 5px;
+}
+
+.save-field {
+    flex-direction: row;
+    flex-grow: 0;
+    min-height: auto;
+    justify-content: flex-start;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    margin-right: 4px;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 5px;
+    padding-right: 0;
+    padding-left: 6px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--unity-colors-default-border);
+}
+
+.save-field--debug {
+    background-color: rgba(185, 176, 29, 0.83);
+}
+
+.save-field__strings {
+    min-height: auto;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.save-field__strings--debug {
+    background-color: rgba(33, 125, 44, 0.68);
+}
+
+.save-field__buttons {
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: 2px;
+}
+
+.save-field__buttons--debug {
+    background-color: rgba(14, 47, 133, 0.85);
+}

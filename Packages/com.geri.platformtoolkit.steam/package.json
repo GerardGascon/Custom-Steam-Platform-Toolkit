@@ -1,0 +1,13 @@
+{
+  "name": "com.geri.platformtoolkit.steam",
+  "version": "0.0.1",
+  "unity": "6000.3",
+  "displayName": "Custom Platform Toolkit for Steam",
+  "description": "This is an open-source alternative to Unity's platform toolkit extension for Steam. This has been built completely from scratch.",
+  "author": {
+    "name": "Gerard Gascón"
+  },
+  "dependencies": {
+    "com.unity.platformtoolkit": "1.0.0"
+  }
+}

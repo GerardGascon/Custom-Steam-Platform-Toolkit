@@ -1,0 +1,29 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.unity.platformtoolkit/Editor/PlayMode/UI/Styles.uss?fileID=7433441132597879392&amp;guid=8d8d414ba2ad6ce4bbfe36e0ed291897&amp;type=3#Styles" />
+    <Unity.PlatformToolkit.PlayMode.PlayModeControlsSystemControlsField class="column justify mb-20" name="play-mode-controls-system-controls">
+        <engine:Label class="title" text="System Controls"/>
+        <engine:VisualElement class="row my">
+            <engine:Label class="subHeading wide" text="Network"/>
+            <engine:VisualElement class="row">
+                <engine:Toggle name="offline-network-toggle"/>
+                <engine:Label class="grey" text="Simulate Offline"/>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement class="row my">
+            <engine:Label class="subHeading wide" text="Storage"/>
+            <engine:VisualElement class="row">
+                <engine:Toggle name="full-storage-toggle"/>
+                <engine:Label class="grey" text="Simulate Full Storage"/>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement class="row mt-5">
+            <engine:Label class="subHeading wide" text="API Tasks"/>
+            <engine:VisualElement class="row">
+                <engine:Toggle name="long-run-toggle"/>
+                <engine:Label class="grey" text="Simulate Long Running Tasks"/>
+                <engine:DropdownField name="time-delay-dropdown"/>
+                <engine:Label class="grey" text="Seconds"/>
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </Unity.PlatformToolkit.PlayMode.PlayModeControlsSystemControlsField>
+</engine:UXML>

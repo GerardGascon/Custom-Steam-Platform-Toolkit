@@ -1,0 +1,8 @@
+.constant-attribute__definition,
+.constant-attribute__name
+{
+    flex: 1 0 0;
+    background-color: var(--unity-colors-box-background);
+    margin: 2px;
+    padding: 5px;
+}

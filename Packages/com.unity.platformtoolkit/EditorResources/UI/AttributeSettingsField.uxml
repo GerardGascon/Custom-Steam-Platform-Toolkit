@@ -1,0 +1,18 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.unity.platformtoolkit/EditorResources/UI/AttributeSettingsField.uss?fileID=7433441132597879392&amp;guid=34c6092b09374d619c732deabe18deb1&amp;type=3#AttributeSettingsField"/>
+    <ui:GroupBox text="Attribute Settings">
+        <ui:VisualElement>
+            <ui:Label text="User Created Attributes" class="h2"/>
+            <ui:HelpBox message-type="Warning" text="You have two or more attributes with the same name." class="container">
+                <Bindings>
+                    <ui:DataBinding property="style.display" data-source-path="ShowWarning" source-to-ui-converters="Show Warning Converter" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:HelpBox>
+            <ui:ListView binding-source-selection-mode="AutoAssign" item-template="AttributeItem.uxml" name="custom-attributes" show-add-remove-footer="true" virtualization-method="DynamicHeight">
+                <Bindings>
+                    <ui:DataBinding property="itemsSource" data-source-path="AttributeViewModels"/>
+                </Bindings>
+            </ui:ListView>
+        </ui:VisualElement>
+    </ui:GroupBox>
+</ui:UXML>

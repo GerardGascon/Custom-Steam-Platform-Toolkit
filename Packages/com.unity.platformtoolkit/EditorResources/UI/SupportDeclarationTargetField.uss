@@ -1,0 +1,16 @@
+.target-selector__implementation-title {
+    font-size: 14px;
+    -unity-font-style: normal;
+    margin-bottom: 1px;
+}
+
+.target-selector {
+    margin-bottom: 20px;
+}
+
+.target-selector__target-group__target-toggle {
+    height: 25px;
+    width: 160px;
+    text-overflow: ellipsis;
+    margin-left: 0px;
+}

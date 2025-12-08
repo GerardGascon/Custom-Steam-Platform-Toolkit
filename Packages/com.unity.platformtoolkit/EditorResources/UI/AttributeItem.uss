@@ -1,0 +1,4 @@
+.attribute-item__field
+{
+    margin: 3px;
+}

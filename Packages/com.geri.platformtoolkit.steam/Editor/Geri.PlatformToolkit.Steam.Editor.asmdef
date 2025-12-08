@@ -1,0 +1,22 @@
+﻿{
+  "name": "Unity.PlatformToolkit.Steam.Editor",
+  "rootNamespace": "Geri.PlatformToolkit.Steam",
+  "references": [
+    "Unity.PlatformToolkit.Editor",
+    "Unity.PlatformToolkit",
+    "Unity.PlatformToolkit.Steam",
+    "com.rlabrecque.steamworks.net.editor",
+    "com.rlabrecque.steamworks.net"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.unity.platformtoolkit/EditorResources/UI/ProjectSettingsContainer.uss?fileID=7433441132597879392&amp;guid=1d3d6f06357ccf243be779a9807c3910&amp;type=3#ProjectSettingsContainer" />
+    <ui:ScrollView>
+        <ui:Label name="title" class="title" />
+        <ui:VisualElement name="content" class="content" />
+    </ui:ScrollView>
+</ui:UXML>
