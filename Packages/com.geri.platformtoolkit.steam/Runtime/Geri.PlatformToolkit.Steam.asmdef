@@ -2,7 +2,8 @@
     "name": "Unity.PlatformToolkit.Steam",
     "rootNamespace": "Geri.PlatformToolkit.Steam",
     "references": [
-        "Unity.PlatformToolkit"
+        "Unity.PlatformToolkit",
+        "com.rlabrecque.steamworks.net"
     ],
     "includePlatforms": [
         "Editor",
