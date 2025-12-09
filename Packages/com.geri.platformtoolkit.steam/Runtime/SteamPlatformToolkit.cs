@@ -7,9 +7,11 @@ using Steamworks;
 namespace Geri.PlatformToolkit.Steam {
 	internal class SteamPlatformToolkit : IPlatformToolkit {
 		public ICapabilities Capabilities { get; private set; }
+		private readonly SteamAccountSystem _steamAccountSystem;
 
 		public SteamPlatformToolkit(AttributeStore attributes) {
 			//TODO: Attributes should be stored somewhere?
+			_steamAccountSystem = new SteamAccountSystem();
 		}
 
 		public Task Initialize() {
@@ -24,6 +26,8 @@ namespace Geri.PlatformToolkit.Steam {
 			if (!initialized)
 				throw new Exception(
 					"[Steamworks.NET] SteamAPI_Init() failed. Refer to Valve's documentation or the comment above this line for more information.");
+
+			_steamAccountSystem.Initialize();
 
 			CapabilityBuilder capabilityBuilder = new() {
 				LocalSavingSystem = true,
