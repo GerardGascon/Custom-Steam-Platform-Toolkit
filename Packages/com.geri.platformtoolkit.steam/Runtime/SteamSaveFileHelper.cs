@@ -16,7 +16,12 @@ namespace Geri.PlatformToolkit.Steam {
 		public string GetPath() => _path;
 
 		public IReadOnlyList<string> EnumerateDirectoriesInDirectory() {
-			return Directory.GetDirectories(_path);
+			string[] directories = Directory.GetDirectories(_path);
+
+			for (int i = 0; i < directories.Length; i++)
+				directories[i] = Path.GetFileName(directories[i]);
+
+			return directories;
 		}
 
 		public void CreateDirectory(string name) {

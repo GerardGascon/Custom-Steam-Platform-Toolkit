@@ -16,12 +16,11 @@ namespace Geri.PlatformToolkit.Steam {
 			_root = root;
 			_writeable = writeable;
 
-			string fullPath = Path.Combine(_saveFileHelper.GetPath(), root);
-			if (_saveFileHelper.EnumerateDirectoriesInDirectory().Contains(fullPath))
+			if (_saveFileHelper.EnumerateDirectoriesInDirectory().Contains(root))
 				return;
 
 			if (!_writeable)
-				throw new FileNotFoundException($"Folder '{fullPath}' for read-only archive does not exist.");
+				throw new FileNotFoundException($"Folder '{root}' for read-only archive does not exist.");
 			_exists = false;
 		}
 

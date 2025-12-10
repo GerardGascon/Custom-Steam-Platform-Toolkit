@@ -40,6 +40,29 @@ namespace Tests {
 
 			string text = System.Text.Encoding.UTF8.GetString(data);
 			Assert.That(text, Is.EqualTo("hello"));
+
+			bool exists = await savingSystem.SaveExists("test");
+			Assert.That(exists, Is.True);
+		}
+
+		[Test]
+		public async Task SaveDataToFile_Subdirectory() {
+			await PlatformToolkit.Initialize();
+
+			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
+			ISaveWritable writable = await savingSystem.OpenSaveWritable("test/potato");
+
+			await writable.WriteFile("file", System.Text.Encoding.UTF8.GetBytes("hello"));
+			await writable.Commit();
+
+			ISaveReadable readable = await savingSystem.OpenSaveReadable("test/potato");
+			byte[] data = await readable.ReadFile("file");
+
+			string text = System.Text.Encoding.UTF8.GetString(data);
+			Assert.That(text, Is.EqualTo("hello"));
+
+			bool exists = await savingSystem.SaveExists("test/potato");
+			Assert.That(exists, Is.True);
 		}
 	}
 }
