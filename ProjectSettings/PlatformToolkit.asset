@@ -16,10 +16,10 @@ MonoBehaviour:
     m_BuildTargetToDeclarationMappings:
       keys: 02000000050000001300000018000000
       values:
-      - Unity.LocalSaving
-      - Unity.LocalSaving
-      - Unity.LocalSaving
-      - Unity.LocalSaving
+      - Geri.Custom.Steam
+      - Geri.Custom.Steam
+      - Geri.Custom.Steam
+      - Geri.Custom.Steam
   StoredAchievements:
     items: []
   StoredSettings:

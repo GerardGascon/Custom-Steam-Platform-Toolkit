@@ -1,12 +1,14 @@
 {
-    "name": "Tests",
+    "name": "Unity.PlatformToolkit.Steam.Tests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "com.rlabrecque.steamworks.net",
         "Unity.PlatformToolkit.Steam",
-        "Unity.PlatformToolkit"
+        "Unity.PlatformToolkit",
+        "Unity.PlatformToolkit.Editor",
+        "Unity.PlatformToolkit.Steam.Editor"
     ],
     "includePlatforms": [
         "Editor"
