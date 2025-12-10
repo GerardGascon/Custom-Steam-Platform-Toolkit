@@ -10,6 +10,7 @@ namespace Geri.PlatformToolkit.Steam {
 
 		public SteamSaveFileHelper(CSteamID accountId) {
 			_path = Path.Combine(Application.persistentDataPath, "pt_saves", accountId.ToString());
+			Directory.CreateDirectory(_path);
 		}
 
 		public IReadOnlyList<string> EnumerateDirectoriesInDirectory() {
