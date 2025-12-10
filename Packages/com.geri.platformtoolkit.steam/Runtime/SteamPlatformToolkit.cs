@@ -5,6 +5,7 @@ using Unity.PlatformToolkit;
 using Steamworks;
 
 namespace Geri.PlatformToolkit.Steam {
+	// TODO: Add Dispose method
 	internal class SteamPlatformToolkit : IPlatformToolkit {
 		public ICapabilities Capabilities { get; private set; }
 		public IAccountSystem Accounts => _steamAccountSystem;

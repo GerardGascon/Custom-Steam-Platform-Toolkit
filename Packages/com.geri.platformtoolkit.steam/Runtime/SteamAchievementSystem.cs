@@ -6,7 +6,6 @@ namespace Geri.PlatformToolkit.Steam {
 		public void Unlock(string id) {
 			SteamUserStats.SetAchievement(id);
 			SteamUserStats.StoreStats();
-			SteamAPI.RunCallbacks();
 		}
 
 		public void UpdateProgress(string id, int progress) {
@@ -18,7 +17,6 @@ namespace Geri.PlatformToolkit.Steam {
 				SteamUserStats.SetAchievement(id);
 
 			SteamUserStats.StoreStats();
-			SteamAPI.RunCallbacks();
 		}
 	}
 }

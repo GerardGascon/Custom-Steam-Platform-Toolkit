@@ -15,6 +15,7 @@ namespace Tests {
 		[TearDown]
 		public void Cleanup() {
 			SteamUserStats.ResetAllStats(true);
+			SteamUserStats.StoreStats();
 		}
 	}
 }
