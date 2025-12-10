@@ -24,5 +24,22 @@ namespace Tests {
 
 			Assert.That(exists, Is.False);
 		}
+
+		[Test]
+		public async Task SaveDataToFile() {
+			await PlatformToolkit.Initialize();
+
+			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
+			ISaveWritable writable = await savingSystem.OpenSaveWritable("test");
+
+			await writable.WriteFile("file", System.Text.Encoding.UTF8.GetBytes("hello"));
+			await writable.Commit();
+
+			ISaveReadable readable = await savingSystem.OpenSaveReadable("test");
+			byte[] data = await readable.ReadFile("file");
+
+			string text = System.Text.Encoding.UTF8.GetString(data);
+			Assert.That(text, Is.EqualTo("hello"));
+		}
 	}
 }

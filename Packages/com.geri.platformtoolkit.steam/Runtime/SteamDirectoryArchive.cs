@@ -16,12 +16,13 @@ namespace Geri.PlatformToolkit.Steam {
 			_name = name;
 			_writeable = writeable;
 
-			if (!_saveFileHelper.EnumerateDirectoriesInDirectory().Contains(name)) {
-				if (!_writeable) {
-					throw new FileNotFoundException($"Folder '{name}' for read-only archive does not exist.");
-				}
-				_exists = false;
-			}
+			string fullPath = Path.Combine(_saveFileHelper.GetPath(), name);
+			if (_saveFileHelper.EnumerateDirectoriesInDirectory().Contains(fullPath))
+				return;
+
+			if (!_writeable)
+				throw new FileNotFoundException($"Folder '{fullPath}' for read-only archive does not exist.");
+			_exists = false;
 		}
 
 		public override Task<IReadOnlyList<string>> EnumerateFiles() {
