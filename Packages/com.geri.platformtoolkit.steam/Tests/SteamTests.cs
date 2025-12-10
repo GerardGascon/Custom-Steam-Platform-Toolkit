@@ -1,4 +1,6 @@
-﻿using Geri.PlatformToolkit.Steam;
+﻿using System;
+using System.IO;
+using Geri.PlatformToolkit.Steam;
 using NUnit.Framework;
 using Steamworks;
 using Unity.PlatformToolkit;
@@ -16,6 +18,12 @@ namespace Tests {
 		public void Cleanup() {
 			SteamUserStats.ResetAllStats(true);
 			SteamUserStats.StoreStats();
+
+			SteamSaveFileHelper fileHelper = new(SteamUser.GetSteamID());
+			DirectoryInfo di = new(fileHelper.GetPath());
+
+			Array.ForEach(di.GetFiles(), f => f.Delete());
+			Array.ForEach(di.GetDirectories(), f => f.Delete(true));
 		}
 	}
 }
