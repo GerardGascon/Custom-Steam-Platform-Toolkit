@@ -49,7 +49,6 @@ namespace Geri.PlatformToolkit.Steam {
 		}
 
 		public Task<ISavingSystem> GetSavingSystem() {
-			//TODO: Check if this is needed when using local save
 			_savingSystem ??= new GenericSavingSystem(_directoryStorageSystem);
 			return Task.FromResult<ISavingSystem>(_savingSystem);
 		}

@@ -1,12 +1,9 @@
 # Custom Platform Toolkit for Steam
 
 > [!WARNING]
-> I'm still developing the package, it probably doesn't work as I'm currently under a research phase to see how Platform
-> Toolkit works.
+> Once the package is 100% compatible and tested I'll remove this message.
 >
-> Once the package is tested and working I'll remove this message.
->
-> To see the status, you can take a look at the [tests folder](Packages/com.geri.platformtoolkit.steam/Tests), all
+> To see the status, you can take a look at this [section](#status), as well as the [tests folder](Packages/com.geri.platformtoolkit.steam/Tests), all
 > passing tests are implemented features.
 
 An open-source alternative to Unity's Steam Platform Toolkit extension currently in progress.
@@ -20,6 +17,25 @@ I'll probably implement all the features needed for my games, for now it should 
 features. But, some potential future features may not be developed by me (i.e. online features).
 
 If you want to add support to any feature, feel free to make a PR.
+
+## Status
+
+Custom Steam Platform Toolkit is already in a usable state, but for 100% compatibility, there's still this checklist to
+complete.
+
+- [ ] Accounts
+    - [x] Get account name
+    - [ ] Get account picture (**done, but not tested**)
+    - [ ] Attributes
+    - [ ] States
+- [x] Achievements
+    - [x] Single achievements
+    - [x] Progressive achievements
+- [ ] Save system
+    - [x] Save file writing
+    - [x] Save file reading
+    - [ ] Enumerate saves
+    - [ ] DataStore
 
 ## Important details
 
