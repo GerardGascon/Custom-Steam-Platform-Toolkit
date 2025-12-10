@@ -29,5 +29,17 @@ namespace Tests {
 			SteamUserStats.GetStat("FeetTraveled", out float progress);
 			Assert.That(progress, Is.EqualTo(100));
 		}
+
+		[Test]
+		public async Task UnlockProgressiveAchievement() {
+			await PlatformToolkit.Initialize();
+
+			IAchievementSystem achievementSystem = await PlatformToolkit.Accounts.Primary.Current.GetAchievementSystem();
+			achievementSystem.UpdateProgress("ACH_TRAVEL_FAR_ACCUM|FeetTraveled", 5280);
+
+			bool exists = SteamUserStats.GetAchievement("ACH_TRAVEL_FAR_ACCUM", out bool unlocked);
+			Assert.That(exists, Is.True);
+			Assert.That(unlocked, Is.True);
+		}
 	}
 }
