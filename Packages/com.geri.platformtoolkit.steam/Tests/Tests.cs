@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Geri.PlatformToolkit.Steam;
 using NUnit.Framework;
+using Steamworks;
 using Unity.PlatformToolkit;
 using UnityEngine;
 
@@ -32,6 +33,16 @@ namespace Tests {
 			Assert.That(PlatformToolkit.Capabilities.AccountAchievements, Is.True);
 			Assert.That(PlatformToolkit.Capabilities.AccountManualSignOut, Is.False);
 			Assert.That(PlatformToolkit.Capabilities.LocalSaving, Is.False);
+		}
+
+		[Test]
+		public async Task SteamAccountNameIsProperlyReturned() {
+			await PlatformToolkit.Initialize();
+
+			string expectedName = SteamFriends.GetPersonaName();
+
+			string name = await PlatformToolkit.Accounts.Primary.Current.GetName();
+			Assert.That(name, Is.EqualTo(expectedName));
 		}
 	}
 }

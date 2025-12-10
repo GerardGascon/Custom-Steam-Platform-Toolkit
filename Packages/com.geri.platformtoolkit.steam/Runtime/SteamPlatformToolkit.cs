@@ -7,6 +7,8 @@ using Steamworks;
 namespace Geri.PlatformToolkit.Steam {
 	internal class SteamPlatformToolkit : IPlatformToolkit {
 		public ICapabilities Capabilities { get; private set; }
+		public IAccountSystem Accounts => _steamAccountSystem;
+
 		private readonly SteamAccountSystem _steamAccountSystem;
 
 		public SteamPlatformToolkit(AttributeStore attributes) {
