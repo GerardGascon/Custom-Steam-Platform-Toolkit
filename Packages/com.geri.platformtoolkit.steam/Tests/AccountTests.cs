@@ -7,28 +7,7 @@ using UnityEngine;
 
 namespace Tests {
 	[TestFixture]
-	public class AccountTests {
-		[SetUp]
-		public void Initialize() {
-			SteamRuntimeConfiguration config = ScriptableObject.CreateInstance<SteamRuntimeConfiguration>();
-			PlatformToolkit.InjectImplementation(config.InstantiatePlatformToolkit());
-		}
-
-		[Test]
-		public async Task CapabilitiesAreProperlyInitialized() {
-			await PlatformToolkit.Initialize();
-
-			Assert.That(PlatformToolkit.Capabilities.Accounts, Is.True);
-			Assert.That(PlatformToolkit.Capabilities.PrimaryAccount, Is.True);
-			Assert.That(PlatformToolkit.Capabilities.AccountPicker, Is.False);
-			Assert.That(PlatformToolkit.Capabilities.InputOwnership, Is.False);
-			Assert.That(PlatformToolkit.Capabilities.PrimaryAccountEstablishLimited, Is.False);
-			Assert.That(PlatformToolkit.Capabilities.AccountSaving, Is.True);
-			Assert.That(PlatformToolkit.Capabilities.AccountAchievements, Is.True);
-			Assert.That(PlatformToolkit.Capabilities.AccountManualSignOut, Is.False);
-			Assert.That(PlatformToolkit.Capabilities.LocalSaving, Is.False);
-		}
-
+	public class AccountTests : SteamTests {
 		[Test]
 		public async Task SteamPrimaryAccountNameIsProperlyReturned() {
 			await PlatformToolkit.Initialize();
