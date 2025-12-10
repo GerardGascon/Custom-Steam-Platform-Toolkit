@@ -9,17 +9,15 @@ namespace Geri.PlatformToolkit.Steam {
 		private readonly CSteamID _userID;
 		private readonly SteamAchievementSystem _achievementSystem;
 		private GenericSavingSystem _savingSystem;
-		private SteamDirectoryStorageSystem _directoryStorageSystem;
+		private readonly SteamDirectoryStorageSystem _directoryStorageSystem;
 
-		public AccountState State { get; private set; }
+		//TODO: Manage this
+		public AccountState State { get; }
 
 		public SteamAccount(CSteamID userID) {
 			_userID = userID;
 			_directoryStorageSystem = new SteamDirectoryStorageSystem(_userID);
-
-			// TODO: Initialize this
-			// We should query all the achievements and their states to steam in order to generate the proper classes
-			// _achievementSystem = new SteamAchievementSystem();
+			_achievementSystem = new SteamAchievementSystem();
 		}
 
 		public Task<bool> SignOut() {
