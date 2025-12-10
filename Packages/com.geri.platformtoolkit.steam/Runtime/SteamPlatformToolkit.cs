@@ -30,7 +30,7 @@ namespace Geri.PlatformToolkit.Steam {
 			_steamAccountSystem.Initialize();
 
 			CapabilityBuilder capabilityBuilder = new() {
-				LocalSavingSystem = true,
+				LocalSavingSystem = false,
 				AccountSupport = true,
 				PrimaryAccount = true,
 				PrimaryAccountEstablishLimited = false,
@@ -38,7 +38,7 @@ namespace Geri.PlatformToolkit.Steam {
 				AccountInputPairingSystem = false,
 				AccountName = true,
 				AccountPicture = true,
-				AccountSavingSystem = false,
+				AccountSavingSystem = true,
 				AccountAchievementSystem = true,
 				AccountManualSignOut = false,
 			};

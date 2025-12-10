@@ -8,11 +8,14 @@ namespace Geri.PlatformToolkit.Steam {
 	public class SteamAccount : IAccount {
 		private readonly CSteamID _userID;
 		private readonly SteamAchievementSystem _achievementSystem;
+		private GenericSavingSystem _savingSystem;
+		private SteamDirectoryStorageSystem _directoryStorageSystem;
 
 		public AccountState State { get; private set; }
 
 		public SteamAccount(CSteamID userID) {
 			_userID = userID;
+			_directoryStorageSystem = new SteamDirectoryStorageSystem(_userID);
 
 			// TODO: Initialize this
 			// We should query all the achievements and their states to steam in order to generate the proper classes
@@ -49,7 +52,8 @@ namespace Geri.PlatformToolkit.Steam {
 
 		public Task<ISavingSystem> GetSavingSystem() {
 			//TODO: Check if this is needed when using local save
-			throw new System.NotImplementedException();
+			_savingSystem ??= new GenericSavingSystem(_directoryStorageSystem);
+			return Task.FromResult<ISavingSystem>(_savingSystem);
 		}
 
 		public Task<IAchievementSystem> GetAchievementSystem() {
