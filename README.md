@@ -3,8 +3,11 @@
 > [!WARNING]
 > I'm still developing the package, it probably doesn't work as I'm currently under a research phase to see how Platform
 > Toolkit works.
-> 
+>
 > Once the package is tested and working I'll remove this message.
+>
+> To see the status, you can take a look at the [tests folder](Packages/com.geri.platformtoolkit.steam/Tests), all
+> passing tests are implemented features.
 
 An open-source alternative to Unity's Steam Platform Toolkit extension currently in progress.
 
@@ -25,6 +28,7 @@ specific assemblies:
 
 - Unity.PlatformToolkit.Steam
 - Unity.PlatformToolkit.Steam.Editor
+- Unity.PlatformToolkit.Steam.Tests
 
 That also means that you can't use the open-source and Unity's implementations simultaneously. If you have Unity Pro,
 just use the official version, as it probably works better than this.
@@ -36,9 +40,6 @@ the [Documentation~ folder](Packages/com.geri.platformtoolkit.steam/Documentatio
 extending the functionality and/or using this package in your project.
 
 ## Installation
-
-> [!NOTE]
-> The is still under development, it may not work at all at the moment.
 
 If you want to add it to your project, you may refer to
 this [file](Packages/com.geri.platformtoolkit.steam/Documentation~/installation.md).
