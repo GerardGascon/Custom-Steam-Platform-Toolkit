@@ -1,6 +1,6 @@
 # Custom Platform Toolkit for Steam
 
-An open-source alternative to Unity's Steam Platform Toolkit extension currently in progress.
+An open-source alternative to Unity's Steam Platform Toolkit extension.
 
 ## Disclaimer
 
