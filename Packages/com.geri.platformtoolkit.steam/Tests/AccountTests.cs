@@ -49,5 +49,16 @@ namespace Tests {
 
 			Assert.That(File.Exists(filePath), Is.True);
 		}
+
+		[Test]
+		public async Task SteamAccountStateAttribute() {
+			await PlatformToolkit.Initialize();
+
+			EPersonaState expectedState = SteamFriends.GetPersonaState();
+
+			EPersonaState state = await PlatformToolkit.Accounts.Primary.Current.GetAttribute<EPersonaState>("PERSONA_STATE");
+
+			Assert.That(state, Is.EqualTo(expectedState));
+		}
 	}
 }

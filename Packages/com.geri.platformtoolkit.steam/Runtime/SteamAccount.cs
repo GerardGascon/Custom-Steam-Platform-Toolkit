@@ -82,8 +82,7 @@ namespace Geri.PlatformToolkit.Steam {
 		}
 
 		public static Task<EPersonaState> GetPersonaStateAttribute(SteamAccount arg) {
-			// TODO: Properly implement this
-			return Task.FromResult(EPersonaState.k_EPersonaStateAway);
+			return Task.FromResult(SteamFriends.GetPersonaState());
 		}
 
 		public static Task<string> GetNicknameAttribute(SteamAccount arg) {
