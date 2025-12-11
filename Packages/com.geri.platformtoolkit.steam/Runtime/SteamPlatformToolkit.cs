@@ -13,8 +13,7 @@ namespace Geri.PlatformToolkit.Steam {
 		private readonly SteamAccountSystem _steamAccountSystem;
 
 		public SteamPlatformToolkit(AttributeStore attributes) {
-			//TODO: Attributes should be stored somewhere?
-			_steamAccountSystem = new SteamAccountSystem();
+			_steamAccountSystem = new SteamAccountSystem(attributes);
 		}
 
 		public Task Initialize() {

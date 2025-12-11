@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Steamworks;
 using Unity.PlatformToolkit.Editor;
 using UnityEngine;
 
@@ -17,9 +18,14 @@ namespace Geri.PlatformToolkit.Steam.Editor {
 	internal class SteamAttributeSettings : AttributeSettings {
 		protected override void InitializeAttributes(
 			out IReadOnlyList<(string AttributeId, Type AttributeType, string AttributeName)> attributeDefinitions) {
-			//TODO: See what's this used for
-			attributeDefinitions = new List<(string attributeId, Type attributeType, string attributeName)>()
-				{ };
+			attributeDefinitions = new List<(string attributeId, Type attributeType, string attributeName)> {
+				("PersonaState", typeof(EPersonaState), "Persona State"),
+				("Nickname", typeof(string), "Nickname"),
+				("UserID", typeof(CSteamID), "User ID"),
+				("SteamLevel", typeof(int), "Steam Level"),
+				("FollowerCount", typeof(int), "Follower Count"),
+				("FriendCount", typeof(int), "Friend Count"),
+			};
 		}
 	}
 }

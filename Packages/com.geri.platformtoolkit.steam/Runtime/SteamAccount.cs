@@ -5,17 +5,19 @@ using Unity.PlatformToolkit;
 using UnityEngine;
 
 namespace Geri.PlatformToolkit.Steam {
-	public class SteamAccount : IAccount {
+	internal class SteamAccount : IAccount {
 		private readonly CSteamID _userID;
 		private readonly SteamAchievementSystem _achievementSystem;
 		private GenericSavingSystem _savingSystem;
 		private readonly SteamDirectoryStorageSystem _directoryStorageSystem;
+		private readonly AccountAttributeProvider<SteamAccount> _accountAttributeProvider;
 
 		//TODO: Manage this
 		public AccountState State { get; }
 
-		public SteamAccount(CSteamID userID) {
+		public SteamAccount(CSteamID userID, AccountAttributeProvider<SteamAccount> accountAttributeProvider) {
 			_userID = userID;
+			_accountAttributeProvider = accountAttributeProvider;
 			_directoryStorageSystem = new SteamDirectoryStorageSystem(_userID);
 			_achievementSystem = new SteamAchievementSystem();
 		}
@@ -60,8 +62,11 @@ namespace Geri.PlatformToolkit.Steam {
 		}
 
 		public bool HasAttribute<T>(string attributeName) {
-			//TODO: Figure out what should this method do.
-			throw new System.NotImplementedException();
+			return _accountAttributeProvider.HasAttribute<T>(attributeName);
+		}
+
+		public Task<T> GetAttribute<T>(string attributeName) {
+			return _accountAttributeProvider.GetAttribute<T>(this, attributeName);
 		}
 
 		public Task<ISavingSystem> GetSavingSystem() {
@@ -74,6 +79,36 @@ namespace Geri.PlatformToolkit.Steam {
 				throw new InvalidOperationException("Achievement System not initialized.");
 
 			return Task.FromResult<IAchievementSystem>(_achievementSystem);
+		}
+
+		public static Task<EPersonaState> GetPersonaStateAttribute(SteamAccount arg) {
+			// TODO: Properly implement this
+			return Task.FromResult(EPersonaState.k_EPersonaStateAway);
+		}
+
+		public static Task<string> GetNicknameAttribute(SteamAccount arg) {
+			// TODO: Properly implement this
+			return Task.FromResult("");
+		}
+
+		public static Task<CSteamID> GetUserIDAttribute(SteamAccount arg) {
+			// TODO: Properly implement this
+			return Task.FromResult(CSteamID.Nil);
+		}
+
+		public static Task<int> GetSteamLevelAttribute(SteamAccount arg) {
+			// TODO: Properly implement this
+			return Task.FromResult(0);
+		}
+
+		public static Task<int> GetFollowerCountAttribute(SteamAccount arg) {
+			// TODO: Properly implement this
+			return Task.FromResult(0);
+		}
+
+		public static Task<int> GetFriendCountAttribute(SteamAccount arg) {
+			// TODO: Properly implement this
+			return Task.FromResult(0);
 		}
 	}
 }
