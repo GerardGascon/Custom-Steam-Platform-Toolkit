@@ -16,8 +16,8 @@ MonoBehaviour:
   m_MaxSignedInAccounts: 1
   m_PrimaryAccountBehaviour: 1
   m_AdditionalAccountBehaviour: 0
-  m_AllowMultipleSignInAttempts: 0
+  m_AllowMultipleSignInAttempts: 1
   m_SupportsAchievements: 1
   m_AccountsCanManuallySignOut: 0
   m_SupportsAccountInputPairing: 0
-  m_SupportsLocalSaving: 1
+  m_SupportsLocalSaving: 0
