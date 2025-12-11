@@ -12,23 +12,27 @@ An open-source alternative to Unity's Steam Platform Toolkit extension currently
 ## Disclaimer
 
 I'm just doing this because I'd like to use Platform Toolkit in my projects but as an average indie developer, I don't
-have
-€2000 lying around.
+have €2000 lying around.
 
 I'll probably implement all the features needed for my games, for now it should cover the entire platform toolkit
 features. But, some potential future features may not be developed by me (i.e. online features).
 
 If you want to add support to any feature, feel free to make a PR.
 
+## Installation
+
+If you want to add it to your project, you may refer to
+this [file](Packages/com.geri.platformtoolkit.steam/Documentation~/installation.md).
+
 ## Status
 
-Custom Steam Platform Toolkit is already in a usable state, but for 100% compatibility, there's still this checklist to
-complete.
+See which features are implemented. If all the checkboxes are checked, it means we have 100% compatibility with Platform
+Toolkit.
 
 - [ ] Accounts
     - [x] Get account name
     - [x] Get account picture
-    - [ ] Attributes
+    - [x] Attributes
     - [ ] States
 - [x] Achievements
     - [x] Single achievements
@@ -63,8 +67,3 @@ just use the official version, as it probably works better than this.
 For development and usage documentation I'll be using
 the [Documentation~ folder](Packages/com.geri.platformtoolkit.steam/Documentation~), so please refer to that when
 extending the functionality and/or using this package in your project.
-
-## Installation
-
-If you want to add it to your project, you may refer to
-this [file](Packages/com.geri.platformtoolkit.steam/Documentation~/installation.md).

@@ -17,7 +17,6 @@ namespace Geri.PlatformToolkit.Steam {
 			_accountAttributeProvider.RegisterAttributeGetter("Nickname", SteamAccount.GetNicknameAttribute);
 			_accountAttributeProvider.RegisterAttributeGetter("UserID", SteamAccount.GetUserIDAttribute);
 			_accountAttributeProvider.RegisterAttributeGetter("SteamLevel", SteamAccount.GetSteamLevelAttribute);
-			_accountAttributeProvider.RegisterAttributeGetter("FollowerCount", SteamAccount.GetFollowerCountAttribute);
 			_accountAttributeProvider.RegisterAttributeGetter("FriendCount", SteamAccount.GetFriendCountAttribute);
 			_accountAttributeProvider.FinalizeRegistration();
 		}

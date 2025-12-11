@@ -60,5 +60,49 @@ namespace Tests {
 
 			Assert.That(state, Is.EqualTo(expectedState));
 		}
+
+		[Test]
+		public async Task SteamNicknameAttribute() {
+			await PlatformToolkit.Initialize();
+
+			string expectedNick = SteamFriends.GetPlayerNickname(SteamUser.GetSteamID());
+
+			string nick = await PlatformToolkit.Accounts.Primary.Current.GetAttribute<string>("NICKNAME");
+
+			Assert.That(nick, Is.EqualTo(expectedNick));
+		}
+
+		[Test]
+		public async Task SteamUserIDAttribute() {
+			await PlatformToolkit.Initialize();
+
+			CSteamID expectedID = SteamUser.GetSteamID();
+
+			CSteamID id = await PlatformToolkit.Accounts.Primary.Current.GetAttribute<CSteamID>("USERID");
+
+			Assert.That(id, Is.EqualTo(expectedID));
+		}
+
+		[Test]
+		public async Task SteamLevelAttribute() {
+			await PlatformToolkit.Initialize();
+
+			int expectedLevel = SteamFriends.GetFriendSteamLevel(SteamUser.GetSteamID());
+
+			int level = await PlatformToolkit.Accounts.Primary.Current.GetAttribute<int>("STEAM_LEVEL");
+
+			Assert.That(level, Is.EqualTo(expectedLevel));
+		}
+
+		[Test]
+		public async Task SteamFriendCountAttribute() {
+			await PlatformToolkit.Initialize();
+
+			int expectedCount = SteamFriends.GetFriendCount(EFriendFlags.k_EFriendFlagImmediate);
+
+			int count = await PlatformToolkit.Accounts.Primary.Current.GetAttribute<int>("FRIEND_COUNT");
+
+			Assert.That(count, Is.EqualTo(expectedCount));
+		}
 	}
 }

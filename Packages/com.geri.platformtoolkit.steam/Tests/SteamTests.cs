@@ -19,7 +19,6 @@ namespace Tests {
 				{ "Nickname", "NICKNAME" },
 				{ "UserID", "USERID" },
 				{ "SteamLevel", "STEAM_LEVEL" },
-				{ "FollowerCount", "FOLLOWER_COUNT" },
 				{ "FriendCount", "FRIEND_COUNT" },
 			};
 			config.attributes = new AttributeStore(attributes.Keys.ToList(), attributes.Values.ToList());

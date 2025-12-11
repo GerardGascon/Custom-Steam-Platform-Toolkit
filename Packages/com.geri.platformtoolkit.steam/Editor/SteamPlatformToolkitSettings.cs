@@ -23,7 +23,6 @@ namespace Geri.PlatformToolkit.Steam.Editor {
 				("Nickname", typeof(string), "Nickname"),
 				("UserID", typeof(CSteamID), "User ID"),
 				("SteamLevel", typeof(int), "Steam Level"),
-				("FollowerCount", typeof(int), "Follower Count"),
 				("FriendCount", typeof(int), "Friend Count"),
 			};
 		}

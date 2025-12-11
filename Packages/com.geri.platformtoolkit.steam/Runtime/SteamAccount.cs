@@ -86,28 +86,19 @@ namespace Geri.PlatformToolkit.Steam {
 		}
 
 		public static Task<string> GetNicknameAttribute(SteamAccount arg) {
-			// TODO: Properly implement this
-			return Task.FromResult("");
+			return Task.FromResult(SteamFriends.GetPlayerNickname(arg._userID));
 		}
 
 		public static Task<CSteamID> GetUserIDAttribute(SteamAccount arg) {
-			// TODO: Properly implement this
-			return Task.FromResult(CSteamID.Nil);
+			return Task.FromResult(arg._userID);
 		}
 
 		public static Task<int> GetSteamLevelAttribute(SteamAccount arg) {
-			// TODO: Properly implement this
-			return Task.FromResult(0);
-		}
-
-		public static Task<int> GetFollowerCountAttribute(SteamAccount arg) {
-			// TODO: Properly implement this
-			return Task.FromResult(0);
+			return Task.FromResult(SteamFriends.GetFriendSteamLevel(arg._userID));
 		}
 
 		public static Task<int> GetFriendCountAttribute(SteamAccount arg) {
-			// TODO: Properly implement this
-			return Task.FromResult(0);
+			return Task.FromResult(SteamFriends.GetFriendCount(EFriendFlags.k_EFriendFlagImmediate));
 		}
 	}
 }
