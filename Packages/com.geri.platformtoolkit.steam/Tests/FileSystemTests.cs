@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
+using Geri.PlatformToolkit.Steam;
 using NUnit.Framework;
+using Steamworks;
 using Unity.PlatformToolkit;
 
 namespace Tests {
@@ -107,6 +109,19 @@ namespace Tests {
 		[Test]
 		public async Task DataStoreGetWithDefaultValue() {
 			await PlatformToolkit.Initialize();
+
+			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
+
+			DataStore readDataStore = await DataStore.Load(savingSystem, "save-slot-1");
+			Assert.That(readDataStore.GetFloat("cat-ratio", .56f), Is.EqualTo(.56f));
+		}
+
+		[Test]
+		public async Task SaveSlotExistsButDataStoreDoesNotExist() {
+			await PlatformToolkit.Initialize();
+
+			SteamSaveFileHelper helper = new(SteamUser.GetSteamID());
+			helper.CreateDirectory("save-slot-1");
 
 			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
 
