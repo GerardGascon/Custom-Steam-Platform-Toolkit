@@ -1,12 +1,5 @@
 # Custom Platform Toolkit for Steam
 
-> [!WARNING]
-> Once the package is 100% compatible and tested I'll remove this message.
->
-> To see the status, you can take a look at this [section](#status), as well as
-> the [tests folder](Packages/com.geri.platformtoolkit.steam/Tests), all
-> passing tests are implemented features.
-
 An open-source alternative to Unity's Steam Platform Toolkit extension currently in progress.
 
 ## Disclaimer
@@ -29,11 +22,11 @@ this [file](Packages/com.geri.platformtoolkit.steam/Documentation~/installation.
 See which features are implemented. If all the checkboxes are checked, it means we have 100% compatibility with Platform
 Toolkit.
 
-- [ ] Accounts
+- [x] Accounts
     - [x] Get account name
     - [x] Get account picture
     - [x] Attributes
-    - [ ] States
+    - [x] States
 - [x] Achievements
     - [x] Single achievements
     - [x] Progressive achievements

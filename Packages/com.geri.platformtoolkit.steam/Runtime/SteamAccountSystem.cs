@@ -28,6 +28,7 @@ namespace Geri.PlatformToolkit.Steam {
 			SignedIn = new List<IAccount> {
 				Primary.Current
 			};
+			OnChange?.Invoke(Primary.Current, Primary.Current.State);
 		}
 	}
 }

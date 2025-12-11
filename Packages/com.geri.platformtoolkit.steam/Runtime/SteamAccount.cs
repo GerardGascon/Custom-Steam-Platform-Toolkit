@@ -12,8 +12,7 @@ namespace Geri.PlatformToolkit.Steam {
 		private readonly SteamDirectoryStorageSystem _directoryStorageSystem;
 		private readonly AccountAttributeProvider<SteamAccount> _accountAttributeProvider;
 
-		//TODO: Manage this
-		public AccountState State { get; }
+		public AccountState State => AccountState.SignedIn;
 
 		public SteamAccount(CSteamID userID, AccountAttributeProvider<SteamAccount> accountAttributeProvider) {
 			_userID = userID;

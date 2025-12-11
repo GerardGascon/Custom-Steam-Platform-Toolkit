@@ -104,5 +104,12 @@ namespace Tests {
 
 			Assert.That(count, Is.EqualTo(expectedCount));
 		}
+
+		[Test]
+		public async Task SteamAccountStateIsSignedIn() {
+			await PlatformToolkit.Initialize();
+
+			Assert.That(PlatformToolkit.Accounts.Primary.Current.State, Is.EqualTo(AccountState.SignedIn));
+		}
 	}
 }
