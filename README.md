@@ -3,14 +3,16 @@
 > [!WARNING]
 > Once the package is 100% compatible and tested I'll remove this message.
 >
-> To see the status, you can take a look at this [section](#status), as well as the [tests folder](Packages/com.geri.platformtoolkit.steam/Tests), all
+> To see the status, you can take a look at this [section](#status), as well as
+> the [tests folder](Packages/com.geri.platformtoolkit.steam/Tests), all
 > passing tests are implemented features.
 
 An open-source alternative to Unity's Steam Platform Toolkit extension currently in progress.
 
 ## Disclaimer
 
-I'm just doing this because I'd like to use Platform Toolkit in my projects but as an average indie developer, I don't have
+I'm just doing this because I'd like to use Platform Toolkit in my projects but as an average indie developer, I don't
+have
 €2000 lying around.
 
 I'll probably implement all the features needed for my games, for now it should cover the entire platform toolkit
@@ -31,12 +33,18 @@ complete.
 - [x] Achievements
     - [x] Single achievements
     - [x] Progressive achievements
-- [ ] Save system
+- [x] Save system
     - [x] Save file writing
     - [x] Save file reading
     - [x] Enumerate saves
     - [x] DataStore
-    - [ ] Local save system
+    - [x] Local save system
+        - Note: Even though PCs support local save systems, I won't add support for now as you can simply use an
+          account-based save system, and it will just work.
+
+          Quoting Unity's documentation:
+          `On platforms that support both an account saving system and a local saving system, it's recommended to use the account saving system and only fall back on the local saving system if an account saving system is unavailable`
+          I won't be adding support for that as Steam can store data for different accounts.
 
 ## Important details
 
