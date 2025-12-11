@@ -10,8 +10,8 @@ An open-source alternative to Unity's Steam Platform Toolkit extension currently
 
 ## Disclaimer
 
-I just do this because I'd like to use platform toolkit on my projects but as an average indie developer I don't have
-€2000 on my pockets.
+I'm just doing this because I'd like to use Platform Toolkit in my projects but as an average indie developer, I don't have
+€2000 lying around.
 
 I'll probably implement all the features needed for my games, for now it should cover the entire platform toolkit
 features. But, some potential future features may not be developed by me (i.e. online features).
