@@ -23,5 +23,7 @@ MonoBehaviour:
   StoredAchievements:
     items: []
   StoredSettings:
-    implementationKeys: []
-    implementationDataValues: []
+    implementationKeys:
+    - Geri.Custom.Steam
+    implementationDataValues:
+    - '{"attributeSettings":{"attributes":[]}}'
