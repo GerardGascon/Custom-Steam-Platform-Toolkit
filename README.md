@@ -25,7 +25,7 @@ complete.
 
 - [ ] Accounts
     - [x] Get account name
-    - [ ] Get account picture (**done, but not tested**)
+    - [x] Get account picture
     - [ ] Attributes
     - [ ] States
 - [x] Achievements

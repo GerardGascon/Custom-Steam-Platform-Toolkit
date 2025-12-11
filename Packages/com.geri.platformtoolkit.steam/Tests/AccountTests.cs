@@ -1,5 +1,5 @@
+using System.IO;
 using System.Threading.Tasks;
-using Geri.PlatformToolkit.Steam;
 using NUnit.Framework;
 using Steamworks;
 using Unity.PlatformToolkit;
@@ -26,6 +26,28 @@ namespace Tests {
 
 			string name = await PlatformToolkit.Accounts.SignedIn[0].GetName();
 			Assert.That(name, Is.EqualTo(expectedName));
+		}
+
+		[Test]
+		public async Task SteamAccountPictureIsProperlyReturned() {
+			await PlatformToolkit.Initialize();
+
+			Texture2D picture = await PlatformToolkit.Accounts.Primary.Current.GetPicture();
+
+			byte[] pngData = picture.EncodeToPNG();
+			Assert.That(pngData, Is.Not.Null);
+
+			string folderPath = Path.Combine(Application.dataPath, "SteamPlatformToolkitTestResults");
+			string filePath = Path.Combine(folderPath, "ProfilePicture.png");
+
+			if (!Directory.Exists(folderPath))
+				Directory.CreateDirectory(folderPath);
+
+			await File.WriteAllBytesAsync(filePath, pngData);
+
+			Debug.Log($"Exported profile picture to: {filePath}");
+
+			Assert.That(File.Exists(filePath), Is.True);
 		}
 	}
 }

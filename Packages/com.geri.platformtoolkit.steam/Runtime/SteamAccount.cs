@@ -28,6 +28,20 @@ namespace Geri.PlatformToolkit.Steam {
 			return Task.FromResult(SteamFriends.GetPersonaName());
 		}
 
+		private static void FlipVertically(byte[] data, int width, int height) {
+			int rowSize = width * 4;
+			byte[] rowBuffer = new byte[rowSize];
+
+			for (int y = 0; y < height / 2; y++) {
+				int topRow = y * rowSize;
+				int bottomRow = (height - y - 1) * rowSize;
+
+				Buffer.BlockCopy(data, topRow, rowBuffer, 0, rowSize);
+				Buffer.BlockCopy(data, bottomRow, data, topRow, rowSize);
+				Buffer.BlockCopy(rowBuffer, 0, data, bottomRow, rowSize);
+			}
+		}
+
 		public Task<Texture2D> GetPicture() {
 			int avatar = SteamFriends.GetLargeFriendAvatar(_userID);
 			if (!SteamUtils.GetImageSize(avatar, out uint width, out uint height))
@@ -36,6 +50,8 @@ namespace Geri.PlatformToolkit.Steam {
 			byte[] image = new byte[width * height * 4];
 			if (!SteamUtils.GetImageRGBA(avatar, image, image.Length))
 				throw new InvalidAccountException("Get profile picture data failed.");
+
+			FlipVertically(image, (int)width, (int)height);
 
 			Texture2D result = new((int)width, (int)height, TextureFormat.RGBA32, false, true);
 			result.LoadRawTextureData(image);

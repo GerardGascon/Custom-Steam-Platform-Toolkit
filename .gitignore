@@ -73,3 +73,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 .idea/
+
+# This is used for local testing and will differ on every Steam account
+/[Aa]ssets/[Ss]teamPlatformToolkitTestResults/*
+/[Aa]ssets/[Ss]teamPlatformToolkitTestResults.meta
