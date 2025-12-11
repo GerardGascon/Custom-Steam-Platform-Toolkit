@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b1ecfa0be9419aa071c40a10e99998, type: 3}
+  m_Name: PlayModeControlsSettings
+  m_EditorClassIdentifier: Unity.PlatformToolkit.PlayMode.Editor::Unity.PlatformToolkit.PlayMode.PlayModeControlsSettings
+  m_CurrentCapability: {fileID: 11400000, guid: 1dffcf0420fb46b580982f7b37237c28, type: 2}
+  m_Environment:
+    m_SimulateLongRunningTaskDelayInMilliseconds: 0
+  m_Accounts:
+    m_SignedInAccounts:
+    - rid: 2631289911335452720
+    m_AccountData:
+    - rid: 2631289911335452720
+    - rid: 2631289911335452721
+    - rid: 2631289911335452722
+    - rid: 2631289911335452723
+    m_PrimaryAccountData:
+      rid: 2631289911335452720
+  m_LocalSaveData:
+    m_SaveData:
+      keys: []
+      values: []
+  m_SetupPrior: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 2631289911335452720
+      type: {class: PlayModeAccountData, ns: Unity.PlatformToolkit.PlayMode, asm: Unity.PlatformToolkit.PlayMode.Editor}
+      data:
+        m_PublicName: Test User 1
+        m_PrivateName: Test User 1 (Private)
+        m_Picture: {fileID: 2800000, guid: 9a8a07bb81fdb994aa4333547aa74a4f, type: 3}
+        Achievements:
+          m_Achievements:
+          - m_Name: ACH_WIN_ONE_GAME
+            m_Unlocked: 1
+            m_Progress: 0
+        Saves:
+          m_SaveData:
+            keys: []
+            values: []
+    - rid: 2631289911335452721
+      type: {class: PlayModeAccountData, ns: Unity.PlatformToolkit.PlayMode, asm: Unity.PlatformToolkit.PlayMode.Editor}
+      data:
+        m_PublicName: Test User 2
+        m_PrivateName: Test User 2 (Private)
+        m_Picture: {fileID: 2800000, guid: 3f50376a050f8b748a38b92b34dc2802, type: 3}
+        Achievements:
+          m_Achievements:
+          - m_Name: ACH_WIN_ONE_GAME
+            m_Unlocked: 0
+            m_Progress: 0
+        Saves:
+          m_SaveData:
+            keys: []
+            values: []
+    - rid: 2631289911335452722
+      type: {class: PlayModeAccountData, ns: Unity.PlatformToolkit.PlayMode, asm: Unity.PlatformToolkit.PlayMode.Editor}
+      data:
+        m_PublicName: Test User 3
+        m_PrivateName: Test User 3 (Private)
+        m_Picture: {fileID: 2800000, guid: 0db5084d8b666d3479802f499aaf7d11, type: 3}
+        Achievements:
+          m_Achievements:
+          - m_Name: ACH_WIN_ONE_GAME
+            m_Unlocked: 0
+            m_Progress: 0
+        Saves:
+          m_SaveData:
+            keys: []
+            values: []
+    - rid: 2631289911335452723
+      type: {class: PlayModeAccountData, ns: Unity.PlatformToolkit.PlayMode, asm: Unity.PlatformToolkit.PlayMode.Editor}
+      data:
+        m_PublicName: Test User 4
+        m_PrivateName: Test User 4 (Private)
+        m_Picture: {fileID: 2800000, guid: 2a2911f4cf5ca8840ab7caefe47f9549, type: 3}
+        Achievements:
+          m_Achievements:
+          - m_Name: ACH_WIN_ONE_GAME
+            m_Unlocked: 0
+            m_Progress: 0
+        Saves:
+          m_SaveData:
+            keys: []
+            values: []

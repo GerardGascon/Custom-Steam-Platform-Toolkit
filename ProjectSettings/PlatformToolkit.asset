@@ -21,7 +21,12 @@ MonoBehaviour:
       - Geri.Custom.Steam
       - Geri.Custom.Steam
   StoredAchievements:
-    items: []
+    items:
+    - id: ACH_WIN_ONE_GAME
+      unlockType: 0
+      progressTarget: 1
+      implementationKeys: []
+      implementationDataValues: []
   StoredSettings:
     implementationKeys:
     - Geri.Custom.Steam

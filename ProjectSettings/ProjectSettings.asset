@@ -664,6 +664,7 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
+    Nintendo Switch: UNITY_SWITCH_FIXED_MAX_QUEUED_FRAMES
     Standalone: STEAMWORKS_NET
   additionalCompilerArguments: {}
   platformArchitecture: {}
