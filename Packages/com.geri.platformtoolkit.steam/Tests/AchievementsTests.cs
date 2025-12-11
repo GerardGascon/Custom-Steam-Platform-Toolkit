@@ -28,6 +28,10 @@ namespace Tests {
 
 			SteamUserStats.GetStat("FeetTraveled", out float progress);
 			Assert.That(progress, Is.EqualTo(100));
+
+			bool exists = SteamUserStats.GetAchievement("ACH_TRAVEL_FAR_ACCUM", out bool unlocked);
+			Assert.That(exists, Is.True);
+			Assert.That(unlocked, Is.False);
 		}
 
 		[Test]
