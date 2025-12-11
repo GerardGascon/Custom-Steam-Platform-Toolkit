@@ -31,11 +31,12 @@ complete.
 - [x] Achievements
     - [x] Single achievements
     - [x] Progressive achievements
-- [x] Save system
+- [ ] Save system
     - [x] Save file writing
     - [x] Save file reading
     - [x] Enumerate saves
     - [x] DataStore
+    - [ ] Local save system
 
 ## Important details
 
