@@ -64,5 +64,54 @@ namespace Tests {
 			bool exists = await savingSystem.SaveExists("test/potato");
 			Assert.That(exists, Is.True);
 		}
+
+		[Test]
+		public async Task DataStoreStoreInt() {
+			await PlatformToolkit.Initialize();
+
+			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
+			DataStore writeDataStore = await DataStore.Load(savingSystem, "save-slot-1");
+			writeDataStore.SetInt("cheese", 99);
+			await writeDataStore.Save(savingSystem, "save-slot-1");
+
+			DataStore readDataStore = await DataStore.Load(savingSystem, "save-slot-1");
+			Assert.That(readDataStore.GetInt("cheese"), Is.EqualTo(99));
+		}
+
+		[Test]
+		public async Task DataStoreStoreString() {
+			await PlatformToolkit.Initialize();
+
+			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
+			DataStore writeDataStore = await DataStore.Load(savingSystem, "save-slot-1");
+			writeDataStore.SetString("alias", "Cool Rat");
+			await writeDataStore.Save(savingSystem, "save-slot-1");
+
+			DataStore readDataStore = await DataStore.Load(savingSystem, "save-slot-1");
+			Assert.That(readDataStore.GetString("alias"), Is.EqualTo("Cool Rat"));
+		}
+
+		[Test]
+		public async Task DataStoreStoreFloat() {
+			await PlatformToolkit.Initialize();
+
+			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
+			DataStore writeDataStore = await DataStore.Load(savingSystem, "save-slot-1");
+			writeDataStore.SetFloat("cat-ratio", .56f);
+			await writeDataStore.Save(savingSystem, "save-slot-1");
+
+			DataStore readDataStore = await DataStore.Load(savingSystem, "save-slot-1");
+			Assert.That(readDataStore.GetFloat("cat-ratio"), Is.EqualTo(.56f));
+		}
+
+		[Test]
+		public async Task DataStoreGetWithDefaultValue() {
+			await PlatformToolkit.Initialize();
+
+			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
+
+			DataStore readDataStore = await DataStore.Load(savingSystem, "save-slot-1");
+			Assert.That(readDataStore.GetFloat("cat-ratio", .56f), Is.EqualTo(.56f));
+		}
 	}
 }

@@ -35,7 +35,7 @@ complete.
     - [x] Save file writing
     - [x] Save file reading
     - [ ] Enumerate saves
-    - [ ] DataStore
+    - [x] DataStore
 
 ## Important details
 
