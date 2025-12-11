@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Geri.PlatformToolkit.Steam;
 using NUnit.Framework;
 using Steamworks;
@@ -127,6 +128,26 @@ namespace Tests {
 
 			DataStore readDataStore = await DataStore.Load(savingSystem, "save-slot-1");
 			Assert.That(readDataStore.GetFloat("cat-ratio", .56f), Is.EqualTo(.56f));
+		}
+
+		[Test]
+		public async Task EnumerateSaves() {
+			await PlatformToolkit.Initialize();
+
+			ISavingSystem savingSystem = await PlatformToolkit.Accounts.Primary.Current.GetSavingSystem();
+
+			ISaveWritable writable = await savingSystem.OpenSaveWritable("save-slot-1");
+			await writable.WriteFile("file", System.Text.Encoding.UTF8.GetBytes("hello"));
+			await writable.Commit();
+
+			writable = await savingSystem.OpenSaveWritable("save-slot-2");
+			await writable.WriteFile("file", System.Text.Encoding.UTF8.GetBytes("hello"));
+			await writable.Commit();
+
+			IReadOnlyList<string> saveNames = await savingSystem.EnumerateSaveNames();
+
+			Assert.That(saveNames, Contains.Item("save-slot-1"));
+			Assert.That(saveNames, Contains.Item("save-slot-2"));
 		}
 	}
 }
