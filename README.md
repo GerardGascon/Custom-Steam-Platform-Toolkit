@@ -27,6 +27,7 @@ Toolkit.
     - [x] Get account picture
     - [x] Attributes
     - [x] States
+        - Note: Steam doesn't support account sign out. Therefore, account states always return `AccountState.SignedIn`.
 - [x] Achievements
     - [x] Single achievements
     - [x] Progressive achievements
