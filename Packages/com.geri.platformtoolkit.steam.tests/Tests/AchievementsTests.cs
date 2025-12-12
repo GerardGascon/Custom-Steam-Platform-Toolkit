@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Geri.PlatformToolkit.Steam;
 using NUnit.Framework;
 using Steamworks;
 using Unity.PlatformToolkit;

@@ -8,6 +8,14 @@
         "com.unity.platformtoolkit": "1.0.0"
       }
     },
+    "com.geri.platformtoolkit.steam.tests": {
+      "version": "file:com.geri.platformtoolkit.steam.tests",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.platformtoolkit": "1.0.0"
+      }
+    },
     "com.rlabrecque.steamworks.net": {
       "version": "https://github.com/rlabrecque/Steamworks.NET.git?path=/com.rlabrecque.steamworks.net#2025.162.1",
       "depth": 0,

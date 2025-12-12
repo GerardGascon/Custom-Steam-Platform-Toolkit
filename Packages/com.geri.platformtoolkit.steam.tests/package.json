@@ -1,0 +1,13 @@
+{
+  "name": "com.geri.platformtoolkit.steam.tests",
+  "version": "1.0.0-u1.0.0",
+  "unity": "6000.3",
+  "displayName": "Custom Platform Toolkit for Steam Tests",
+  "description": "This is an open-source alternative to Unity's platform toolkit extension for Steam. This has been built completely from scratch.",
+  "author": {
+    "name": "Gerard Gasc\u00f3n"
+  },
+  "dependencies": {
+    "com.unity.platformtoolkit": "1.0.0"
+  }
+}
